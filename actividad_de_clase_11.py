@@ -31,3 +31,14 @@ print(datos[3])
 Crea una lista con el nombre de 3 personas. Imprime cada elemento de la lista mediante un ciclo for.
 """
 
+# Problema 2
+
+nombres = ["Ana", "Juan", "Pedro"]
+
+for nombre in nombres:
+  print(nombre)
+
+"""### Problema 3
+Crea un programa donde el usuario pueda introducir mediante el teclado nombres de 3 libros, los cuales deberás ir guardando en una lista. Al final, imprime la lista de libros.
+"""
+

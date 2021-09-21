@@ -56,3 +56,38 @@ print(libros)
 Crea una lista que simule las calificaciones de 10 actividades de un alumno. Supón que debido al excepcional desempeño del alumno, el profesor ha decidido aumentar 5 puntos. Tu programa deberá aumentar a cada calificación los 5 puntos (recordando que la calificación máxima es de 100 y no puede pasarse).
 """
 
+# Problema 4
+
+califs = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91]
+
+for calif in range(len(califs)):
+  if califs[calif] <= 100 and califs[calif] >= 95:
+    califs[calif] = 100
+  else: 
+    califs[calif] = califs[calif] + 5
+
+print(califs)
+
+"""### Problema 5
+Escribe una función que convierta un número entero en lista, la función deberá recibir un número entero y regresar una lista con todos los dígitos del numero.
+
+Ejemplo
+
+Si el número entero es 575, la lista resultante sería [5,7,5]
+"""
+
+# Problema 5
+
+def numero_lista(n):
+  lista = []
+
+  num = str(n)
+
+  for digito in num:
+    lista.append(digito)
+
+  print(lista)
+
+numero_lista(575)
+
+

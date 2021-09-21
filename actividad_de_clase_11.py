@@ -42,3 +42,17 @@ for nombre in nombres:
 Crea un programa donde el usuario pueda introducir mediante el teclado nombres de 3 libros, los cuales deberás ir guardando en una lista. Al final, imprime la lista de libros.
 """
 
+# Problema 3
+
+libros = []
+
+libros.append(input("Ingresa el primer libro: "))
+libros.append(input("Ingresa el segundo libro: "))
+libros.append(input("Ingresa el tercer libro: "))
+
+print(libros)
+
+"""### Problema 4
+Crea una lista que simule las calificaciones de 10 actividades de un alumno. Supón que debido al excepcional desempeño del alumno, el profesor ha decidido aumentar 5 puntos. Tu programa deberá aumentar a cada calificación los 5 puntos (recordando que la calificación máxima es de 100 y no puede pasarse).
+"""
+

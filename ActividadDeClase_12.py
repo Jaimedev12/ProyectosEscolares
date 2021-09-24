@@ -128,4 +128,29 @@ IMPARES
 (Es decir, la palabra PARES en mayúscula en un renglón y, posteriormente, el despliegue de la lista de pares y, de manera similar, los impares, tal como se muestra en el ejemplo) Respeta el orden.
 """
 
+# Problema 3
 
+lista = []
+lista_pares = []
+lista_impares = []
+
+elemento = ""
+print("Ingrese números enteros para agregar a la lista, para terminar escriba '*'")
+
+while elemento != "*":
+  elemento = input()
+
+  if elemento != "*":
+    lista.append(int(elemento))
+
+for n in range(len(lista)):
+  if lista[n] % 2 == 0:
+    lista_pares.append(lista[n])
+  elif lista[n] % 2 != 0:
+    lista_impares.append(lista[n])
+
+print("PARES")
+print(lista_pares)
+print()
+print("IMPARES")
+print(lista_impares)

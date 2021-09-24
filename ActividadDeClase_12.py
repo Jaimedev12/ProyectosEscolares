@@ -89,4 +89,43 @@ Se reciben uno a uno y por renglón, los elementos de la lista (strings y de acu
 Si el valor correspondiente al número de elementos que tendrá la lista es 0 o negativo, se deberá mandar el mensaje “Error”. Si el valor recibido es mayor a 0, se despliega la lista original (después de haber recibido los datos). Posteriormente, se despliega la lista, pero sin duplicados.
 """
 
+# Problema 2
+
+elementos = int(input("Ingresa la cantidad de elementos de la lista: "))
+lista = []
+
+if elementos <= 0:
+  print("ERROR")
+else:
+  for num in range(elementos):
+    dato = input("Ingresa un nombre: ")
+    lista.append(dato)
+
+  lista_sin_repetidos = list(dict.fromkeys(lista))
+
+  print(lista)
+  print(lista_sin_repetidos)
+
+"""### Problema 3
+Desarrolla un programa que permitirá obtener, a partir de una lista que recibirá del usuario, crear y desplegar una sublista con valores pares y otra sublista con valores impares.
+
+**Entrada**
+
+Cero o más valores enteros, uno en cada renglón. Finaliza la captura con un *
+
+**Salida**
+
+Se muestra la salida que deberá mostrar tu programa, tal como se ilustra a continuación:
+
+PARES
+
+[2, 4, 8]
+
+IMPARES
+
+[1, 5]
+
+(Es decir, la palabra PARES en mayúscula en un renglón y, posteriormente, el despliegue de la lista de pares y, de manera similar, los impares, tal como se muestra en el ejemplo) Respeta el orden.
+"""
+
 

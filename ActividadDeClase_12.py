@@ -45,3 +45,48 @@ Después, el programa debe desplegar la suma de todos los elementos de la lista.
 
 Por último, el programa debe desplegar el promedio de todos los elementos de la lista.
 """
+
+# Problema 1
+
+elementos = []
+n = 0
+
+while n <= 0:
+  n = int(input("¿Cuántos elementos quieres ingresar?: "))
+
+  if n <= 0:
+    print("Número no válido, inténtalo de nuevo")
+
+
+for num in range(n):
+  elemento = int(input("Ingresa un número: "))
+  elementos.append(elemento)
+
+
+promedio = sum(elementos) / n
+
+print()
+print("Elementos en la lista: ")
+
+for i in range(len(elementos)):
+  print(f"lista[{i}] =", elementos[i])
+
+print("El último elemento de la lista es:", elementos[-1])
+print("La suma de los elementos en la lista es:", sum(elementos))
+print("El promedio de todos los elementos de la lista es:", promedio)
+
+"""### Problema 2
+Escribe un programa que reciba del usuario una lista y devuelva otra con los elementos de la lista original, pero sin elementos duplicados.
+
+**Entradas**
+
+Se recibe un número entero positivo correspondiente al número de elementos que el usuario ingresará.
+
+Se reciben uno a uno y por renglón, los elementos de la lista (strings y de acuerdo al número recibido anteriormente).
+
+**Salidas**
+
+Si el valor correspondiente al número de elementos que tendrá la lista es 0 o negativo, se deberá mandar el mensaje “Error”. Si el valor recibido es mayor a 0, se despliega la lista original (después de haber recibido los datos). Posteriormente, se despliega la lista, pero sin duplicados.
+"""
+
+

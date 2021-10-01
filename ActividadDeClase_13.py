@@ -43,3 +43,20 @@ la función debe imprimir
 
 """
 
+def sustituir_caracteres(texto, letra):
+  for caracter in texto:
+    if caracter != letra:
+      texto = texto.replace(caracter, "*")
+  return texto
+
+cadena = "Esta cadena de texto será modificada"
+letra = "a"
+
+print(sustituir_caracteres(cadena, letra))
+
+"""### Problema 3
+Escribe una función que recibe como parámetro un texto. La función deberá eliminar todos los espacios en blanco de la cadena original.
+
+cadena = "Esta cadena de texto no tendrá espacios en blanco"
+"""
+

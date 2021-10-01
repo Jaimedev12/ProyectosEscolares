@@ -50,3 +50,15 @@ while palabra != "*":
   lista_palabras.append(palabra)
   palabra = input("Ingresa una palabra, escribe '*' para terminar: ")
 
+archivo = open("palabras.txt", "w")
+for palabra in lista_palabras:
+  archivo.write(palabra + "\n")
+archivo.close()
+
+with open("palabras.txt", "r") as file: # Ordenar los elementos alfabéticamente
+  texto = file.readlines()
+  texto.sort()
+  print(texto)
+
+
+

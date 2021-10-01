@@ -75,3 +75,38 @@ cadena = "Esta cadena de texto no contendrá la subcadena"
 subcadena = "Esta"
 """
 
+def eliminar_subcadena(cadena, subcadena):
+  nueva_cadena = cadena.replace(subcadena, "")
+  return nueva_cadena
+
+cadena = "Esta cadena de texto no contendrá la subcadena"
+subcadena = "Esta"
+print(eliminar_subcadena(cadena, subcadena))
+
+"""### Problema 5
+Escribe una función que recibe como parámetro una cadena de texto y una subcadena. La función deberá contar cuántas veces se repite la subcadena en la cadena original y devolver dicho número.
+
+Ejemplo:
+
+cadena = "Armando Escándalos escribe este código, aquel código y el mismo código"
+
+subcadena = “código”
+
+Una vez que se ejecuta la función el resultado es:
+
+“La subcadena este se repite 3 veces”
+"""
+
+def contar_repeticiones(cadena, subcadena):
+  contador = 0
+
+  for index in range(len(cadena)):
+    if cadena[index : index + len(subcadena)] == subcadena:
+      contador += 1
+  
+  return contador
+
+cadena = "Armando Escándalos escribe este código, aquel código y el mismo código"
+subcadena = "código"
+
+print(f"La subcadena se repite {contar_repeticiones(cadena, subcadena)} veces")

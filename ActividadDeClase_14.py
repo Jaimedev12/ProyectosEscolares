@@ -64,6 +64,14 @@ with open("palabras.txt", "w") as file: # Modificar el texto de palabras.txt
   for palabra in texto:
     file.write(palabra)
 
+with open("palabras.txt", "a") as file:
+  for i in range(3):
+    nueva_palabra = input("Ingresa una nueva palabra: ")
+    file.write(nueva_palabra + "\n")
 
+with open("palabras.txt", "a") as file:
+  file.write("Autor: Jaime Eduardo López Castro" + "\n")
+  file.write("Fecha: 01/octubre/2021" + "\n")
+  file.write("Última hora de modificación: 10:34 a.m." + "\n")
 
 

@@ -60,3 +60,18 @@ Escribe una función que recibe como parámetro un texto. La función deberá el
 cadena = "Esta cadena de texto no tendrá espacios en blanco"
 """
 
+def eliminar_espacios(s):
+  s_troncho = s.replace(" ", "")
+  return s_troncho
+
+cadena = "Esta cadena de texto no tendrá espacios en blanco"
+print(eliminar_espacios(cadena))
+
+"""### Problema 4
+Escribe una función que reciba como parámetro dos cadenas de texto (cadena y subcadena). La función deberá buscar la “subcadena” dentro de la “cadena” original y deberá eliminarla. El resultado es la cadena ya sin la subcadena.
+
+cadena = "Esta cadena de texto no contendrá la subcadena"
+
+subcadena = "Esta"
+"""
+

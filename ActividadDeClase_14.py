@@ -59,6 +59,11 @@ with open("palabras.txt", "r") as file: # Ordenar los elementos alfabéticamente
   texto = file.readlines()
   texto.sort()
   print(texto)
+  
+with open("palabras.txt", "w") as file: # Modificar el texto de palabras.txt
+  for palabra in texto:
+    file.write(palabra)
+
 
 
 

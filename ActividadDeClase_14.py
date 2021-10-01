@@ -42,3 +42,11 @@ Abre el archivo, guarda el nombre del autor del programa y la fecha y la última
 
 Cierra el archivo.
 """
+lista_palabras = []
+
+palabra = input("Ingresa una palabra, escribe '*' para terminar: ")
+
+while palabra != "*":
+  lista_palabras.append(palabra)
+  palabra = input("Ingresa una palabra, escribe '*' para terminar: ")
+

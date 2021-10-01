@@ -19,3 +19,27 @@ Escribe una función que reciba como parámetro una cadena de texto y como resul
 cadena = "Esta cadena de texto será invertida"
 """
 
+def invertir_cadena(s):
+  s_inv = s[::-1]
+  return s_inv.upper()
+
+cadena = "Esta cadena de texto será invertida"
+print(invertir_cadena(cadena))
+
+"""### Problema 2
+Escribe una función que reciba dos parámetros: un texto y una letra. La función deberá imprimir la cadena, pero en cada letra diferente de “letra” deberá escribir asteriscos.
+
+Ejemplo:
+
+cadena = "Esta cadena de texto será modificada"
+
+letra = "a"
+
+la función debe imprimir
+
+```
+***a**a***a**********************a*a
+```
+
+"""
+

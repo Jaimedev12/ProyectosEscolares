@@ -52,3 +52,20 @@ for renglon in b:
 Crea una función que reciba matriz A y sume todos sus elementos e imprima el total.
 """
 
+def sumar_elementos(a):
+
+  suma = 0
+  for renglon in a:
+    for dato in renglon:
+      suma += dato
+  
+  return suma
+
+a = [
+     [5, 2, 3],
+     [4, 5, 6],
+     [7, 8, 81],
+    ]
+
+print(sumar_elementos(a))
+

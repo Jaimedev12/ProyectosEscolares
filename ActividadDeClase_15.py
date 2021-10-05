@@ -18,3 +18,33 @@ Link: https://colab.research.google.com/drive/10hzlWbsPTo611lXQIBJ2cPBaVN9s047s?
 Crea dos matrices 'A' y 'B' de 3 X 3 con datos del 1 al 9 e imprime sus valores renglón por renglón.
 """
 
+a = [
+     [1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9],
+    ]
+
+b = [
+     [1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9],
+    ]
+
+print("Lista A:")
+for renglon in a:
+  print(renglon)
+
+print("\nLista B:")
+for renglon in b:
+  print(renglon)
+
+print("\nLista A renglón por renglón:")
+for renglon in a:
+  for dato in renglon:
+    print(dato)
+
+print("\nLista B renglón por renglón:")
+for renglon in b:
+  for dato in renglon:
+    print(dato)
+

@@ -48,3 +48,7 @@ for renglon in b:
   for dato in renglon:
     print(dato)
 
+"""### Problema 2
+Crea una función que reciba matriz A y sume todos sus elementos e imprima el total.
+"""
+

@@ -69,3 +69,35 @@ a = [
 
 print(sumar_elementos(a))
 
+"""### Problema 3
+Crea una función llamada suma que reciba las matrices A y B matrices y además crea una matriz 'C' que consista en la suma elemento por elemento de las matrices A y B (es decir  C = A + B).
+"""
+
+def suma_matriz(a, b):
+  c = []
+
+  for line in range(len(a)):
+    renglon = []
+    for dato in range(len(a[0])):
+      suma = a[line][dato] + b[line][dato]
+      renglon.append(suma)
+
+    c.append(renglon)
+  return c 
+
+
+a = [
+     [1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9],
+    ]
+
+b = [
+     [1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9],
+    ]
+
+c = suma_matriz(a, b)
+
+print(f"Lista A: {a} \nLista B: {b} \nLista C: {c}")

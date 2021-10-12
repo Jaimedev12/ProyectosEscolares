@@ -257,3 +257,153 @@ f"Opción correcta: {lista_preguntas[pregunta_a_actualizar - 1][7]}")
       print("Pregunta actualizada con éxito")
 
 
+def estudiar_area():
+    enfoque_deseado_index = int(input("""¿Qué enfoque te gustaría estudiar?: 
+1 - Matemáticas
+2 - Lectura
+3 - Ciencias
+--> """))
+    
+    while enfoque_deseado_index < 1 or enfoque_deseado_index > 3:
+      print("Número inváludo, inténtelo de nuevo")
+      enfoque_deseado_index = int(input("""¿Qué enfoque te gustaría estudiar?: 
+1 - Matemáticas
+2 - Lectura
+3 - Ciencias
+--> """))
+
+    if enfoque_deseado_index == 1:
+      enfoque_deseado = "Matematicas"
+    elif enfoque_deseado_index == 2:
+      enfoque_deseado = "Lectura"
+    elif enfoque_deseado_index == 3:
+      enfoque_deseado = "Ciencias"
+      
+    lista_preguntas_posibles = []
+    for pregunta in range(len(lista_preguntas)):
+      if lista_preguntas[pregunta][1] == enfoque_deseado:
+        lista_preguntas_posibles.append(lista_preguntas[pregunta])
+
+    print(f"\n¿Cuántas preguntas te gustaría practicar? ({len(lista_preguntas_posibles)} preguntas disponibles para el enfoque)")
+    n_preguntas_deseadas = int(input("--> "))
+
+    while n_preguntas_deseadas < 1 or n_preguntas_deseadas > len(lista_preguntas_posibles):
+      print("Número de preguntas inválido, intente de nuevo")
+      print(f"\n¿Cuántas preguntas te gustaría practicar? ({len(lista_preguntas_posibles)} preguntas disponibles para el enfoque)")
+      n_preguntas_deseadas = int(input("--> "))
+
+    random_questions = random.sample(range(len(lista_preguntas_posibles)), n_preguntas_deseadas)
+
+    aciertos, errores = hacer_pregunta(lista_preguntas_posibles, random_questions)
+    print(f"Aciertos: {aciertos} - Errores: {errores}")
+
+def presentar_quiz():
+    lista_preguntas_posibles_mate = []
+    lista_preguntas_posibles_lectura = []
+    lista_preguntas_posibles_ciencias = []
+
+    for pregunta in range(len(lista_preguntas)):
+      if lista_preguntas[pregunta][1] == "Matematicas":
+        lista_preguntas_posibles_mate.append(lista_preguntas[pregunta])
+      if lista_preguntas[pregunta][1] == "Lectura":
+        lista_preguntas_posibles_lectura.append(lista_preguntas[pregunta])
+      if lista_preguntas[pregunta][1] == "Ciencias":
+        lista_preguntas_posibles_ciencias.append(lista_preguntas[pregunta])
+
+    diez_preguntas_mate = []
+    diez_preguntas_lectura = []
+    diez_preguntas_ciencias = []
+
+    random_questions_mate = random.sample(range(len(lista_preguntas_posibles_mate)), 10)
+    random_questions_lectura = random.sample(range(len(lista_preguntas_posibles_lectura)), 10)
+    random_questions_ciencias = random.sample(range(len(lista_preguntas_posibles_ciencias)), 10)
+
+    for pregunta in range(len(random_questions_mate)):
+      diez_preguntas_mate.append(lista_preguntas_posibles_mate[random_questions_mate[pregunta]])
+    for pregunta in range(len(random_questions_lectura)):
+      diez_preguntas_lectura.append(lista_preguntas_posibles_lectura[random_questions_lectura[pregunta]])
+    for pregunta in range(len(random_questions_ciencias)):
+      diez_preguntas_ciencias.append(lista_preguntas_posibles_ciencias[random_questions_ciencias[pregunta]])
+
+    print("\nMatemáticas:")
+    aciertos_mate, errores_mate = hacer_pregunta(diez_preguntas_mate, random_questions_mate)
+    print("\nLectura:")
+    aciertos_lectura, errores_lectura = hacer_pregunta(diez_preguntas_lectura, random_questions_lectura)
+    print("\nCiencias:")
+    aciertos_ciencias, errores_ciencias = hacer_pregunta(diez_preguntas_ciencias, random_questions_ciencias)
+
+    print(f"\nMatemáticas: \nAciertos: {aciertos_mate} - Errores: {errores_mate}")
+    print(f"Lecturas: \nAciertos: {aciertos_lectura} - Errores: {errores_lectura}")
+    print(f"Ciencias: \nAciertos: {aciertos_ciencias} - Errores: {errores_ciencias}")
+
+    total_aciertos = aciertos_mate + aciertos_lectura + aciertos_ciencias
+    total_errores = errores_mate + errores_lectura + errores_ciencias
+    calif = (total_aciertos / 30) * 100
+
+    pregunta_realizada = f"{len(examenes_realizados) + 1},{calif},{total_aciertos},{total_errores}"
+    examenes_realizados.append(pregunta_realizada.split(","))
+
+    #Poner un tiempo de 20 minutos
+
+def reportar_calificaciones():
+
+    suma_califs = 0
+    for examen in range(len(examenes_realizados)):
+      suma_califs += round(float(examenes_realizados[examen][1]))
+    suma_aciertos = 0
+    for examen in range(len(examenes_realizados)):
+      suma_aciertos += round(float(examenes_realizados[examen][2]))
+    suma_errores = 0
+    for examen in range(len(examenes_realizados)):
+      suma_errores += round(float(examenes_realizados[examen][3]))
+    
+    Tabla = {'Headers': ["Total de usuarios", 
+                         "Promedio de calificaciones", 
+                         "Preguntas correctas", 
+                         "Preguntas incorrectas"],
+             'Datos': [len(examenes_realizados), 
+                       suma_califs/len(examenes_realizados), 
+                       f"{(suma_aciertos/(30*len(examenes_realizados)))*100}%", 
+                       f"{(suma_errores/(30*len(examenes_realizados)))*100}%"]}
+        
+    print(tabulate(Tabla))
+
+def salir():
+    print("Gracias por su preferencia")
+
+def menu(): # Imprime el menu y realiza una función dependiendo el input
+    while True:
+        print("""
+        Menu:
+        1. Alta de preguntas de prueba PISA (lectura, matemáticas, ciencias)
+        2. Actualizar preguntas de la prueba PISA (lectura, matemáticas, ciencias)
+        3. Estudiar preguntas de cierta área (lectura, matemáticas, ciencias)
+        4. Presentar un quiz (lectura, matemáticas, ciencias)
+        5. Reporte de calificaciones
+        6. Salir 
+        """)
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            registrar_pregunta()
+
+        elif opcion == "2":
+            actualizar_pregunta()
+
+        elif opcion == "3":
+            estudiar_area()
+
+        elif opcion == "4":
+            presentar_quiz()
+
+        elif opcion == "5":
+            reportar_calificaciones()
+
+        elif opcion == "6":
+            salir()
+            break
+
+        else:
+            print("Opción no válida") 
+
+main()

@@ -57,4 +57,44 @@ salir():
 2. Rompemos el ciclo while que mantiene el programa corriendo.
 """
 
+#Primero que nada, pido una disculpa
+#por todos los pecados cometidos en este código
+
+from tabulate import tabulate
+import csv
+import random
+
+lista_preguntas = []
+examenes_realizados = [['1', '50.0', '15', '15'], ['2', '66.66', '20', '10'], ['3', '83.33', '25', '5'], ['4', '100.0', '30', '0']]
+
+with open("Lista_de_Preguntas.csv") as csv_file:
+  csv_reader = csv.reader(csv_file)
+  #next(csv_file)
+
+  for line in csv_file:
+    lista_preguntas.append(line.split(","))
+
+for i in range(len(lista_preguntas)):
+  lista_preguntas[i][-1] = lista_preguntas[i][-1].replace("\n", "")
+
+def hacer_pregunta(posibles_preguntas, numeros_random):
+    ta = 0
+    te = 0
+    for i in range(len(numeros_random)):
+      print(f"\nPregunta {i + 1}: {posibles_preguntas[numeros_random[i]][2]}")
+      print(f"a) {posibles_preguntas[numeros_random[i]][3]}")
+      print(f"b) {posibles_preguntas[numeros_random[i]][4]}")
+      print(f"c) {posibles_preguntas[numeros_random[i]][5]}")
+      print(f"d) {posibles_preguntas[numeros_random[i]][6]}")
+
+      respuesta_dada = int(input("(1-> a  2-> b  3-> c  4-> d) Tu respuesta: "))
+      if respuesta_dada == int(posibles_preguntas[numeros_random[i]][7]):
+        ta += 1
+      else:
+        te += 1
+
+    return ta, te
+
+def main():
+    menu()
 

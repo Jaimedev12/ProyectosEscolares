@@ -98,3 +98,65 @@ def hacer_pregunta(posibles_preguntas, numeros_random):
 def main():
     menu()
 
+def registrar_pregunta():
+    lista_de_posibles_respuestas = []
+
+    n_enfoque = int(input("""
+    ¿Cuál es el enfoque de la pregunta?:
+    1. Matemática
+    2. Lectura
+    3. Ciencias
+    --> """))
+
+    # Revisar si el usuario escogió un enfoque válido
+    while n_enfoque < 1 or n_enfoque > 3:
+        print("Ingresa un valor válido")
+        n_enfoque = int(input("""
+        ¿Cuál es el enfoque de la pregunta?:
+        1. Matemáticas
+        2. Lectura
+        3. Ciencias
+        --> """))
+
+    if n_enfoque == 1:
+        enfoque = "Matematicas"
+    elif n_enfoque == 2:
+        enfoque = "Lectura"
+    elif n_enfoque == 3:
+        enfoque = "Ciencias"
+
+    texto_pregunta = input("\nIngresa la pregunta: ")
+
+    for posible_respuesta in range(4):
+        pR = input("Ingresa la posible respuesta: ")
+        lista_de_posibles_respuestas.append(pR)
+
+    respuesta_correcta = int(input("""\n¿Cuál es la respuesta correcta?
+    1 --> el incizo a)
+    2 --> el incizo b)
+    3 --> el incizo c)
+    4 --> el incizo d)
+    """))
+
+    # Revisar si el usuario escogió un una respuesta válida
+    while respuesta_correcta < 1 or respuesta_correcta > 4:
+        print("Ingresa un valor válido")
+        respuesta_correcta = int(input("""¿Cuál es la respuesta correcta?
+    1 --> el incizo a)
+    2 --> el incizo b)
+    3 --> el incizo c)
+    4 --> el incizo d)
+    """))
+
+    pregunta_completa_string = str(f"{len(lista_preguntas) + 1} {enfoque} {texto_pregunta} {lista_de_posibles_respuestas[0]} {lista_de_posibles_respuestas[1]} {lista_de_posibles_respuestas[2]} {lista_de_posibles_respuestas[3]} {respuesta_correcta}")
+
+    pregunta = pregunta_completa_string.split()
+
+    lista_preguntas.append(pregunta)
+
+    with open("Lista_de_Preguntas.csv", 'w') as csv_file_w:
+        csv_writer = csv.writer(csv_file_w)
+        for pregunta in lista_preguntas:
+          csv_writer.writerow(pregunta)
+    print("Pregunta resgistrada exitosamente")
+

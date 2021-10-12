@@ -160,3 +160,100 @@ def registrar_pregunta():
           csv_writer.writerow(pregunta)
     print("Pregunta resgistrada exitosamente")
 
+def actualizar_pregunta():
+    contador = 0
+    print("\nPreguntas registradas:")
+    for pregunta in lista_preguntas: #Aquí se imprimen las preguntas registradas y se pregunta cuál quieres actualizar
+      contador += 1
+      print(f"Pregunta {contador}: {pregunta}")
+    pregunta_a_actualizar = int(input("\n¿Qué pregunta quiere modificar? (Ingrese el número): "))
+    
+    while pregunta_a_actualizar < 1 or pregunta_a_actualizar > len(lista_preguntas) + 1:
+      print("Número inválido, inténtelo de nuevo porfavor")
+      pregunta_a_actualizar = int(input("¿Qué pregunta quiere modificar? (Ingrese el número): "))
+    
+    print(f"\nNúmero de pregunta: {lista_preguntas[pregunta_a_actualizar - 1][0]}. "\
+f"Enfoque: {lista_preguntas[pregunta_a_actualizar - 1][1]}. "\
+f"Texto de la pregunta: {lista_preguntas[pregunta_a_actualizar - 1][2]}. "\
+f"Opción 1: {lista_preguntas[pregunta_a_actualizar - 1][3]}. "\
+f"Opción 2: {lista_preguntas[pregunta_a_actualizar - 1][4]}. "\
+f"Opción 3: {lista_preguntas[pregunta_a_actualizar - 1][5]}. "\
+f"Opción 4: {lista_preguntas[pregunta_a_actualizar - 1][6]}. "\
+f"Opción correcta: {lista_preguntas[pregunta_a_actualizar - 1][7]}")
+    
+
+    borrador_nueva_pregunta = ["", "", "", "", "", "", "", ""]
+
+    print("Ingrese los datos nuevos, si no quiere actualizar el dato, presione 'enter'")
+
+    borrador_nueva_pregunta[0] = lista_preguntas[pregunta_a_actualizar - 1][0]
+
+    nuevo_enfoque = input("Nuevo enfoque: ")
+    if nuevo_enfoque == "":
+      borrador_nueva_pregunta[1] = lista_preguntas[pregunta_a_actualizar - 1][1]
+    else:
+      borrador_nueva_pregunta[1] = nuevo_enfoque
+
+    nuevo_texto_pregunta = input("Nuevo texto de pregunta: ")
+    if nuevo_texto_pregunta == "":
+      borrador_nueva_pregunta[2] = lista_preguntas[pregunta_a_actualizar - 1][2]
+    else:
+      borrador_nueva_pregunta[2] = nuevo_texto_pregunta
+
+    nueva_opcion1 = input("Ingresa una nueva opción 1: ")
+    if nueva_opcion1 == "":
+      borrador_nueva_pregunta[3] = lista_preguntas[pregunta_a_actualizar - 1][3]
+    else:
+      borrador_nueva_pregunta[3] = nueva_opcion1
+
+    nueva_opcion2 = input("Ingresa una nueva opción 2: ")
+    if nueva_opcion2 == "":
+      borrador_nueva_pregunta[4] = lista_preguntas[pregunta_a_actualizar - 1][4]
+    else:
+      borrador_nueva_pregunta[4] = nueva_opcion2
+
+    nueva_opcion3 = input("Ingresa una nueva opción 3: ")
+    if nueva_opcion3 == "":
+      borrador_nueva_pregunta[5] = lista_preguntas[pregunta_a_actualizar - 1][5]
+    else:
+      borrador_nueva_pregunta[5] = nueva_opcion3
+
+    nueva_opcion4 = input("Ingresa una nueva opción 4: ")
+    if nueva_opcion4 == "":
+      borrador_nueva_pregunta[6] = lista_preguntas[pregunta_a_actualizar - 1][6]
+    else:
+      borrador_nueva_pregunta[6] = nueva_opcion4
+
+    nueva_respuesta_correcta = input("Ingrese una nueva respuesta correcta: ")
+    if nueva_respuesta_correcta == "":
+      borrador_nueva_pregunta[7] = lista_preguntas[pregunta_a_actualizar - 1][7]
+    else:
+      borrador_nueva_pregunta[7] = nueva_respuesta_correcta
+
+    print("Así quedaría la nueva opción: ")
+
+    print(f"\nNúmero de pregunta: {borrador_nueva_pregunta[0]}. "\
+    f"Enfoque: {borrador_nueva_pregunta[1]}. "\
+    f"Texto de la pregunta: {borrador_nueva_pregunta[2]}. "\
+    f"Opción 1: {borrador_nueva_pregunta[3]}. "\
+    f"Opción 2: {borrador_nueva_pregunta[4]}. "\
+    f"Opción 3: {borrador_nueva_pregunta[5]}. "\
+    f"Opción 4: {borrador_nueva_pregunta[6]}. "\
+    f"Opción correcta: {borrador_nueva_pregunta[7]}")
+    cambiar_pregunta = input("¿Está seguro de que quiere actualizar los datos de la pregunta? (1-sí 2-no)")
+
+    while cambiar_pregunta != "1" and cambiar_pregunta != "2":
+      print("Inválido, inténtelo otra vez")
+      cambiar_pregunta = input("¿Está seguro de que quiere actualizar los datos de la pregunta? (1-sí 2-no)")
+
+    if cambiar_pregunta == "1":
+      lista_preguntas[pregunta_a_actualizar - 1] = borrador_nueva_pregunta
+        
+      with open("Lista_de_Preguntas.csv", 'w') as csv_file_w:
+        csv_writer = csv.writer(csv_file_w)
+        for pregunta in lista_preguntas:
+          csv_writer.writerow(pregunta)
+
+      print("Pregunta actualizada con éxito")
+
+

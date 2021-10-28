@@ -1,4 +1,3 @@
-
 """
 ## Algoritmos por función
 registrar_pregunta():

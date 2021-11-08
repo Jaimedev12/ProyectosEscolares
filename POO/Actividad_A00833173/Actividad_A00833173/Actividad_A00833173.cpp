@@ -17,6 +17,28 @@ int imprimirMenuProblemaUno()
     return opcion;
 }
 
+void imprimir(string algo) {
+    cout << algo;
+}
+
+float sumar(float a, float b) {
+    float resultado;
+    resultado = a + b;
+    return resultado;
+}
+
+float restar(float a, float b) {
+    float resultado;
+    resultado = a - b;
+    return resultado;
+}
+
+float multiplicar(float a, float b) {
+    float resultado;
+    resultado = a * b;
+    return resultado;
+}
+
 float problemaUno() {
     float a = 0;
     float b = 0;
@@ -39,34 +61,14 @@ float problemaUno() {
         resultado = restar(a, b);
         break;
     case 3:
-        resultado = multuplicar(a, b);
+        resultado = multiplicar(a, b);
         break;
     default:
         cout << "Opcion no valida";
         abort();
     }
-}
 
-float sumar(float a, float b) {
-    float resultado;
-    resultado = a + b;
-    return resultado
-}
-
-float restar(float a, float b) {
-    float resultado;
-    resultado = a - b;
-    return resultado;
-}
-
-float multiplicar(float a, float b) {
-    float resultado;
-    resultado = a * b;
-    return resultado;
-}
-
-void imprimir(string algo) {
-    cout << algo;
+    imprimir("\nEl resultado es: " + to_string(resultado));
 }
 
 int main()

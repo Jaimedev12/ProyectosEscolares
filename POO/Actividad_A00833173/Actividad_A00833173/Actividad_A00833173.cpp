@@ -1,10 +1,23 @@
 // Actividad2_A00833173.cpp
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main()
+int imprimirMenuProblemaUno()
 {
+    cout << "\nQue quieres hacer con los numeros?\n";
+    cout << "1 - Mostrar una suma de los dos numeros\n";
+    cout << "2 - Mostrar una resta de los dos numeros(el primero menos el segundo)\n";
+    cout << "3 - Mostrar una multiplicacion de los dos numeros:\n";
+
+    int opcion;
+    cin >> opcion;
+
+    return opcion;
+}
+
+float problemaUno() {
     float a = 0;
     float b = 0;
 
@@ -13,19 +26,52 @@ int main()
     cout << "Ingresa el segundo numero: ";
     cin >> b;
 
-    cout << "\nQue quieres hacer con los numeros?\n";
-    cout << "<S> Mostrar una suma de los dos numeros\n";
-    cout << "<R> Mostrar una resta de los dos numeros(el primero menos el segundo)\n";
-    cout << "<M> Mostrar una multiplicacion de los dos números";
-    
-    string opcion = "";
-    cin >> opcion;
+    int opcion;
+    opcion = imprimirMenuProblemaUno();
 
-    if (opcion != "S" && opcion != "R" && opcion != "M")
+    float resultado;
+    switch(opcion)
     {
+    case 1:
+        resultado = sumar(a, b);
+        break;
+    case 2:
+        resultado = restar(a, b);
+        break;
+    case 3:
+        resultado = multuplicar(a, b);
+        break;
+    default:
         cout << "Opcion no valida";
-        abort()
-    };
+        abort();
+    }
+}
+
+float sumar(float a, float b) {
+    float resultado;
+    resultado = a + b;
+    return resultado
+}
+
+float restar(float a, float b) {
+    float resultado;
+    resultado = a - b;
+    return resultado;
+}
+
+float multiplicar(float a, float b) {
+    float resultado;
+    resultado = a * b;
+    return resultado;
+}
+
+void imprimir(string algo) {
+    cout << algo;
+}
+
+int main()
+{
+    problemaUno();
 
 
 
@@ -39,7 +85,7 @@ int main()
     */
 
 
-    cout << "Hello World!\n";
+    //cout << "Hello World!\n"; 
 }
 
 

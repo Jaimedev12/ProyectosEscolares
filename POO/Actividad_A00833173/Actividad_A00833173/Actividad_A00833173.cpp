@@ -4,6 +4,23 @@
 #include <string>
 using namespace std;
 
+int imprimirMenuMain() {
+    cout << "Que ejercicio quieres ejecutar?:\n";
+    cout << "1 - Ejercicio 1";
+    cout << "2 - Ejercicio 2";
+    cout << "3 - Ejercicio 3";
+    cout << "4 - Ejercicio 4";
+    cout << "5 - Ejercicio 5";
+    cout << "6 - Ejercicio 6";
+    cout << "7 - Ejercicio 7";
+    cout << "8 - Ejercicio 8";
+
+    string opcion;
+    cin >> opcion;
+
+    return opcion;
+}
+
 int imprimirMenuProblemaUno()
 {
     cout << "\nQue quieres hacer con los numeros?\n";
@@ -73,6 +90,18 @@ float problemaUno() {
 
 int main()
 {
+    int problemaAResolver;
+    problemaAResolver = imprimirMenuMain();
+
+    switch (problemaAResolver)
+    {
+    case 1:
+        problemaUno();
+        break;
+    default:
+        break;
+    }
+
     problemaUno();
 
 

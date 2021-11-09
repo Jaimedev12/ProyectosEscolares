@@ -14,8 +14,9 @@ int imprimirMenuMain() {
     cout << "6 - Ejercicio 6";
     cout << "7 - Ejercicio 7";
     cout << "8 - Ejercicio 8";
+    cout << "9 - Salir";
 
-    string opcion;
+    int opcion;
     cin >> opcion;
 
     return opcion;
@@ -88,6 +89,34 @@ float problemaUno() {
     imprimir("\nEl resultado es: " + to_string(resultado));
 }
 
+float problemaDos() {
+    return 0;
+}
+
+float problemaTres() {
+    return 0;
+}
+
+float problemaCuatro() {
+    return 0;
+}
+
+float problemaCinco() {
+    return 0;
+}
+
+float problemaSies() {
+    return 0;
+}
+
+float problemaSiete() {
+    return 0;
+}
+
+float problemaOcho() {
+    return 0;
+}
+
 int main()
 {
     int problemaAResolver;
@@ -98,11 +127,35 @@ int main()
     case 1:
         problemaUno();
         break;
+    case 2:
+        problemaUno();
+        break;
+    case 3:
+        problemaUno();
+        break;
+    case 4:
+        problemaUno();
+        break;
+    case 5:
+        problemaUno();
+        break;
+    case 6:
+        problemaUno();
+        break;
+    case 7:
+        problemaUno();
+        break;
+    case 8:
+        problemaUno();
+        break;
+    case 9:
+        cout << "Gracias por usar nuestros servicios";
+        break;
     default:
         break;
     }
 
-    problemaUno();
+    return;
 
 
 

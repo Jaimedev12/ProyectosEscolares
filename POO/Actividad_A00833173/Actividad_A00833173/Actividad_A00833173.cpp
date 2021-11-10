@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <iomanip>
+#include <math.h>
 using namespace std;
 
 int imprimirMenuMain() {
@@ -216,12 +217,44 @@ void problemaSeis() {
     }
 }
 
-float problemaSiete() {
-    return 0;
+void problemaSiete() {
+    int a = 3, d = 3, n = 25, num, suma = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        num = a + (d * i);
+        cout << "Termino " << i + 1 << ": " << num << endl;
+        suma += num;
+    }
+
+    cout << endl;
+    cout << "Valor total de la serie: " << suma;
 }
 
-float problemaOcho() {
-    return 0;
+void problemaOcho() {
+    float sumaGeometrica = 0, sumaArmonica = 0;
+    float mediaGeometrica = 0, mediaArmonica = 0;
+    int num, contador = 0;
+
+    cout << "Ingresa un numero: " << endl;
+    cin >> num;
+
+    while (num != 0)
+    {
+        contador++;
+
+        sumaGeometrica += num;
+        sumaArmonica += 1.0f / num;
+
+        cout << "Ingresa un numero: " << endl;
+        cin >> num;
+    }
+
+    mediaGeometrica = pow(sumaGeometrica, 1.0f / contador);
+    mediaArmonica = 1.0f / sumaArmonica;
+    
+    cout << "Media Geometrica: " << mediaGeometrica << endl;
+    cout << "Media Armonica: " << mediaArmonica << endl;
 }
 
 int main()

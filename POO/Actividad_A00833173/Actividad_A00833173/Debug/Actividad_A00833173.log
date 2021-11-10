@@ -1,4 +1,4 @@
 ﻿  Actividad_A00833173.cpp
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad_A00833173\Actividad_A00833173\Actividad_A00833173.cpp(185,20): warning C4101: 'fahrenheit': variable local sin referencia
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad_A00833173\Actividad_A00833173\Actividad_A00833173.cpp(231,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad_A00833173\Actividad_A00833173\Actividad_A00833173.cpp(186,20): warning C4101: 'fahrenheit': variable local sin referencia
+C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad_A00833173\Actividad_A00833173\Actividad_A00833173.cpp(262,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Actividad_A00833173.vcxproj -> C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad_A00833173\Debug\Actividad_A00833173.exe

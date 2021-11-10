@@ -2,19 +2,21 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <iomanip>
 using namespace std;
 
 int imprimirMenuMain() {
-    cout << "Que ejercicio quieres ejecutar?:\n";
-    cout << "1 - Ejercicio 1";
-    cout << "2 - Ejercicio 2";
-    cout << "3 - Ejercicio 3";
-    cout << "4 - Ejercicio 4";
-    cout << "5 - Ejercicio 5";
-    cout << "6 - Ejercicio 6";
-    cout << "7 - Ejercicio 7";
-    cout << "8 - Ejercicio 8";
-    cout << "9 - Salir";
+    cout << "Que ejercicio quiere ejecutar?:\n";
+    cout << "1 - Ejercicio 1\n";
+    cout << "2 - Ejercicio 2\n";
+    cout << "3 - Ejercicio 3\n";
+    cout << "4 - Ejercicio 4\n";
+    cout << "5 - Ejercicio 5\n";
+    cout << "6 - Ejercicio 6\n";
+    cout << "7 - Ejercicio 7\n";
+    cout << "8 - Ejercicio 8\n";
+    cout << "9 - Salir\n";
 
     int opcion;
     cin >> opcion;
@@ -35,31 +37,27 @@ int imprimirMenuProblemaUno()
     return opcion;
 }
 
-void imprimir(string algo) {
-    cout << algo;
-}
-
-float sumar(float a, float b) {
-    float resultado;
+int sumar(int a, int b) {
+    int resultado;
     resultado = a + b;
     return resultado;
 }
 
-float restar(float a, float b) {
-    float resultado;
+int restar(int a, int b) {
+    int resultado;
     resultado = a - b;
     return resultado;
 }
 
-float multiplicar(float a, float b) {
-    float resultado;
+int multiplicar(int a, int b) {
+    int resultado;
     resultado = a * b;
     return resultado;
 }
 
-float problemaUno() {
-    float a = 0;
-    float b = 0;
+void problemaUno() {
+    int a = 0;
+    int b = 0;
 
     cout << "Ingresa el primer numero: ";
     cin >> a;
@@ -69,7 +67,7 @@ float problemaUno() {
     int opcion;
     opcion = imprimirMenuProblemaUno();
 
-    float resultado;
+    int resultado;
     switch(opcion)
     {
     case 1:
@@ -86,27 +84,129 @@ float problemaUno() {
         abort();
     }
 
-    imprimir("\nEl resultado es: " + to_string(resultado));
+    cout << "El resultado es: " << resultado << endl;
 }
 
-float problemaDos() {
-    return 0;
+int preguntarPorNumeroImpar() {
+    int num;
+    cout << "Ingresa un numero entero impar:\n";
+    cin >> num;
+
+    return num;
 }
 
-float problemaTres() {
-    return 0;
+void problemaDos() {
+    int num;
+    num = preguntarPorNumeroImpar();
+
+    while (num % 2 == 0)
+    {
+        cout << "Incorrecto, ingresa un numero entero impar\n";
+        num = preguntarPorNumeroImpar();
+    }
+
+    cout << "Gracias :D" << endl;
 }
 
-float problemaCuatro() {
-    return 0;
+void problemaTres() {
+    int suma = 0;
+
+    for (int i = 0; i <= 100; i += 2)
+    {
+        suma += i;
+    }
+
+    cout << "La suma es " << suma << endl;
 }
 
-float problemaCinco() {
-    return 0;
+int pedirCantidadDeNumeros(){
+    int cantidad;
+    cout << "Cuantos numeros quiere ingresar?\n";
+    cin >> cantidad;
+
+    return cantidad;
 }
 
-float problemaSies() {
-    return 0;
+void problemaCuatro() {
+    int cantidad;
+    float suma = 0, num = 0, promedio = 0;
+
+    cantidad = pedirCantidadDeNumeros();
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        cout << "Ingrese un numero\n";
+        cin >> num;
+
+        suma += num;
+        cout << "\n";
+    }
+
+    promedio = suma / cantidad;
+
+    cout << "El promedio es: " << promedio << endl;
+}
+
+void problemaCinco() {
+    int randInt = 0;
+    int num;
+    int contador = 1;
+
+    randInt = rand() % 100 + 1;
+
+    cout << "Ingresa un numero entero entre 1 y 100\n";
+    cin >> num;
+
+    while (num != randInt)
+    {
+        if (num < randInt)
+        {
+            cout << "MAS\n";
+        }
+        else if (num > randInt)
+        {
+            cout << "MENOS\n";
+        }
+        cin >> num;
+        contador++;
+    }
+
+    cout << "Acertaste el valor magico " << randInt << " despues de " << contador << " intentos";
+}
+
+float celciusToFahrenheit(float celcius) {
+    float fahrenheit;
+    fahrenheit = celcius * (9.0f / 5.0f) + 32;
+
+    return fahrenheit;
+}
+
+void problemaSeis() {
+    float celcius, fahrenheit, incremento;
+    int cantidad = 0;
+
+    float valoresCelcius[1000], valoresFahrenheit[1000];
+
+    cout << "Ingresa el valor inicial en Celcius:\n";
+    cin >> celcius;
+
+    cout << "Cuantas conversiones se haran?\n";
+    cin >> cantidad;
+
+    cout << "Incremento entre valores Celcius:\n";
+    cin >> incremento;
+
+    float celActual = celcius;
+    for (int i = 0; i < cantidad; i++)
+    {
+        valoresCelcius[i] = celActual;
+        celActual += incremento;
+    }
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        valoresFahrenheit[i] = celciusToFahrenheit(valoresCelcius[i]);
+    }
 }
 
 float problemaSiete() {
@@ -119,69 +219,51 @@ float problemaOcho() {
 
 int main()
 {
+    srand(time(NULL));
+
     int problemaAResolver;
-    problemaAResolver = imprimirMenuMain();
+    bool seguir = true;
 
-    switch (problemaAResolver)
+    while (seguir)
     {
-    case 1:
-        problemaUno();
-        break;
-    case 2:
-        problemaUno();
-        break;
-    case 3:
-        problemaUno();
-        break;
-    case 4:
-        problemaUno();
-        break;
-    case 5:
-        problemaUno();
-        break;
-    case 6:
-        problemaUno();
-        break;
-    case 7:
-        problemaUno();
-        break;
-    case 8:
-        problemaUno();
-        break;
-    case 9:
-        cout << "Gracias por usar nuestros servicios";
-        break;
-    default:
-        break;
+        problemaAResolver = imprimirMenuMain();
+
+        switch (problemaAResolver)
+        {
+        case 1:
+            problemaUno();
+            break;
+        case 2:
+            problemaDos();
+            break;
+        case 3:
+            problemaTres();
+            break;
+        case 4:
+            problemaCuatro();
+            break;
+        case 5:
+            problemaCinco();
+            break;
+        case 6:
+            problemaSeis();
+            break;
+        case 7:
+            problemaSiete();
+            break;
+        case 8:
+            problemaOcho();
+            break;
+        case 9:
+            cout << "Gracias por usar nuestros servicios";
+            seguir = false;
+            break;
+        default:
+            break;
+        }
+        cout << "\n\n";
     }
+    
 
-    return;
-
-
-
-
-    /*En  caso  de  no  introducir  una  opción  válida, el  programa  informará  con  un  letrero  que  no  es
-    correcta"
-
-    operaNumeros.Función  que  lea  dos  números  por  teclado  y  permita  elegir  entre  3  opciones  en  un
-    menú :
-
-    */
-
-
-    //cout << "Hello World!\n"; 
+    return 0;
 }
-
-
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln

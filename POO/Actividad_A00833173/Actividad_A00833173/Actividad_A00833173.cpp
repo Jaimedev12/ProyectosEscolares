@@ -207,6 +207,13 @@ void problemaSeis() {
     {
         valoresFahrenheit[i] = celciusToFahrenheit(valoresCelcius[i]);
     }
+
+    cout << setw(15) << "Fahrenheit" << setw(20) << "Celcius" << endl;
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        cout << setw(15) << valoresFahrenheit[i] << setw(20) << valoresCelcius[i] << endl;
+    }
 }
 
 float problemaSiete() {

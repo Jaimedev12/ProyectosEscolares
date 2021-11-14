@@ -9,8 +9,8 @@ private:
 	string nombre;
 	int telefono;
 	string direccion;
-	int horas;
-	int minutos;
+	int horasRec;
+	int minutosRec;
 
 public:
 	Cliente();

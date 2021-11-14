@@ -2,12 +2,35 @@
 //
 
 #include <iostream>
+#include <string>
+#include "Cliente.h"
 using namespace std;
 
 int main()
 {
-    //Planear recolección del envío
+    string nombreCliente, direccion, telefono, horaRec;
+    string datosCliente;
+    Cliente* cliente1 = new Cliente();
 
+    cout << "Ingrese su nombre: ";
+    cin >> nombreCliente;
+    
+    cout << "Telefono: ";
+    cin >> telefono;
+
+    cout << "Direccion: ";
+    cin >> direccion;
+
+    cout << "Hora a la que recogio su paquete: ";
+    cin >> horaRec;
+
+    cliente1->guardarDatos(nombreCliente, telefono, direccion, horaRec);
+
+    datosCliente = cliente1->datos2String();
+
+    cout << datosCliente;
+
+    //Planear recolección del envío
     //Ingresar nombre, teléfono, dirección y horario de recolección
 
     //Ingresar destino (nombre del destinatario, teléfono y dirección), peso y direcciones del paquete

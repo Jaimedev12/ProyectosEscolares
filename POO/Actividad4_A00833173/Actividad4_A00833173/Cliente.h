@@ -6,14 +6,14 @@ using namespace std;
 class Cliente
 {
 private:
-	string nombre;
-	int telefono;
-	string direccion;
-	int horasRec;
-	int minutosRec;
+	string nombre, telefono, direccion, horaRec;
 
 public:
+
 	Cliente();
 	~Cliente();
+
+	void guardarDatos(string nombre, string tel, string dir, string horas);
+	string datos2String();
 };
 

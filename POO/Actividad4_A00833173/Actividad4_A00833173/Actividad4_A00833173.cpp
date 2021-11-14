@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    //Planear recolección del eivío
+    //Planear recolección del envío
 
     //Ingresar nombre, teléfono, dirección y horario de recolección
 

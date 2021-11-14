@@ -4,19 +4,25 @@
 #include <iostream>
 #include <string>
 #include "Cliente.h"
+#include "Paquete.h"
 using namespace std;
+
 
 int main()
 {
-    string nombreCliente, direccion, telefono, horaRec;
-    string datosCliente;
+    string nombreCliente, direccion, telefonoCliente, horaRec;
+    string datosCliente, datosPaquete;
     Cliente* cliente1 = new Cliente();
 
+    float peso, largo, ancho, alto;
+    Paquete* paquete1 = new Paquete();
+
+    //Datos del cliente
     cout << "Ingrese su nombre: ";
     cin >> nombreCliente;
-    
+
     cout << "Telefono: ";
-    cin >> telefono;
+    cin >> telefonoCliente;
 
     cout << "Direccion: ";
     cin >> direccion;
@@ -24,11 +30,38 @@ int main()
     cout << "Hora a la que recogio su paquete: ";
     cin >> horaRec;
 
-    cliente1->guardarDatos(nombreCliente, telefono, direccion, horaRec);
+    //Se guardan los datos en el objeto del cliente
+    cliente1->guardarDatos(nombreCliente, telefonoCliente, direccion, horaRec);
 
+    //Se convierten los datos del cliente en string y se imprimen
+    cout << endl;
     datosCliente = cliente1->datos2String();
-
     cout << datosCliente;
+
+
+    cout << endl << endl;
+
+    //Se preguntan los datos del paquete
+    cout << "Ingrese el peso del paquete: ";
+    cin >> peso;
+
+    cout << "Largo del paquete: ";
+    cin >> largo;
+
+    cout << "Ancho del paquete: ";
+    cin >> ancho;
+
+    cout << "Alto del paquete: ";
+    cin >> alto;
+
+    //Se asignan los valores al objeto de la clase
+    paquete1->guardarDatos(peso, largo, ancho, alto);
+
+    //Se convierten los datos en string y se imprimen
+    cout << endl;
+    datosPaquete = paquete1->datos2String();
+    cout << datosPaquete;
+
 
     //Planear recolección del envío
     //Ingresar nombre, teléfono, dirección y horario de recolección

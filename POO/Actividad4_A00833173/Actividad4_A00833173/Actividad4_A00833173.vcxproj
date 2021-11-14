@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Destinatario.h" />
     <ClInclude Include="Destino.h" />
     <ClInclude Include="Paquete.h" />
   </ItemGroup>

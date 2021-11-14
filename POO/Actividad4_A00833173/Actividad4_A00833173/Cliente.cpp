@@ -22,7 +22,7 @@ string Cliente::datos2String()
 {
 	string tempString;
 	
-	tempString = tempString + "Nombre del cliente: " + this->nombre + "\n";
+	tempString = "Nombre del cliente: " + this->nombre + "\n";
 	tempString = tempString + "Telefono del cliente: " + this->telefono + "\n";
 	tempString = tempString + "Direccion del cliente: " + this->direccion + "\n";
 	tempString = tempString + "Hora de recoleccion: " + this->horaRec + "\n";

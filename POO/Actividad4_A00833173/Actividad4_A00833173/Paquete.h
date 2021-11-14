@@ -14,7 +14,7 @@ public:
 	Paquete();
 	~Paquete();
 
-	void guardarDatos(int p, int x, int y, int z);
+	void guardarDatos(float p, float x, float y,float z);
 	string datos2String();
 	
 

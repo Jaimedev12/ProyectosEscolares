@@ -12,7 +12,7 @@ int main()
 
     //Ingresar destino (nombre del destinatario, teléfono y dirección), peso y direcciones del paquete
 
-    //
+    //Imprimir etiqueta
 }
 
 /*

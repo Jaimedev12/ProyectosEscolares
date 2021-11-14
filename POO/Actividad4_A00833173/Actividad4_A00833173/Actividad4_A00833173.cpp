@@ -6,7 +6,13 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+    //Planear recolección del eivío
+
+    //Ingresar nombre, teléfono, dirección y horario de recolección
+
+    //Ingresar destino (nombre del destinatario, teléfono y dirección), peso y direcciones del paquete
+
+    //
 }
 
 /*

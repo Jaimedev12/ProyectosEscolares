@@ -18,3 +18,11 @@ void Point::setCoords(int x, int y) {
 	this->coordx = x;
 	this->coordy = y;
 }
+
+int Point::getCoordX() {
+	return coordx;
+}
+
+int Point::getCoordY() {
+	return coordy;
+}

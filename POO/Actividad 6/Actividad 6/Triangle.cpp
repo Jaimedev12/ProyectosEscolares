@@ -27,11 +27,11 @@ Triangle::Triangle(Point* point1, Point* point2, Point* point3) {
 Triangle::~Triangle() {}
 
 double Triangle::perimeter() {
-	this->perimetro = 0;
+	return lado1 + lado2 + lado3;
 }
 
 double Triangle::area() {
-	this->superficie = 0;
+	return sqrt(semip * (semip - lado1) * (semip - lado2) * (semip - lado3));
 }
 
 double Triangle::getLado1() {

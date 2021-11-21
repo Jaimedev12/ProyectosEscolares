@@ -10,8 +10,6 @@ private:
 	Point* vertex1;
 	Point* vertex2;
 	Point* vertex3;
-	double perimetro;
-	double superficie;
 	double lado1;
 	double lado2;
 	double lado3;

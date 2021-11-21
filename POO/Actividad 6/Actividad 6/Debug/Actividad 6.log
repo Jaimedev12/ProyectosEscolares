@@ -1,10 +1,2 @@
-﻿  Actividad 6.cpp
-  Point.cpp
-  Triangle.cpp
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(38,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(42,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(46,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(50,9): warning C4244: 'return': conversión de 'double' a 'int'; posible pérdida de datos
-  Generando código...
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(31): error C4716: 'Triangle::perimeter': debe devolver un valor
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Actividad 6\Triangle.cpp(35): error C4716: 'Triangle::area': debe devolver un valor
+﻿  Triangle.cpp
+  Actividad 6.vcxproj -> C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad 6\Debug\Actividad 6.exe

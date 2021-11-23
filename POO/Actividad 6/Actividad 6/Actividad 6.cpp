@@ -24,7 +24,5 @@ int main()
 	cout << "Semiperimetro: " << triangle->getSemiP() << endl;
 	cout << "Perimetro: " << triangle->perimeter() << endl;
 	cout << "Area: " << triangle->area() << endl;
-
-
 }
 

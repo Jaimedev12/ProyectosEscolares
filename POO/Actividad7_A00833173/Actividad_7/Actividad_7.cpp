@@ -40,36 +40,15 @@ Fraccion* sumaFracciones(Fraccion* fracc1, Fraccion* fracc2) {
     int num3 = sum / MCD(sum, lcm);
     lcm = lcm / MCD(sum, lcm);
     
-    //printing output
-    cout << num1 << "/" << den1 << " + " << num2 << "/" << den2 << " = " << num3 << "/" << lcm;
-
     Fraccion* nuevaFraccion = new Fraccion(num3, lcm);
-
     return nuevaFraccion;
 }
-
-
-/*
-Fraccion* sumaFracciones(Fraccion* fracc1, Fraccion* fracc2) {
-    Fraccion* nuevaFraccion = new Fraccion();
-    int nuevoDen, nuevoNum;
-    double nuevoNum1, nuevoNum2;
-    nuevoDen = mcm(fracc1->getDen(), fracc2->getDen());
-    nuevoNum1 = ((static_cast<double>(fracc1->getDen()) / nuevoDen) * fracc1->getNum());
-    nuevoNum2 = ((static_cast<double>(fracc2->getDen()) / nuevoDen) * fracc2->getNum());
-    nuevoNum = nuevoNum1 + nuevoNum2;
-
-    nuevaFraccion->setDen(nuevoDen);
-    nuevaFraccion->setNum(nuevoNum);
-
-    return nuevaFraccion;
-}
-*/
 
 //--------------------------------------------------------------------------------------------------------------
 
 int main()
 {
+    srand(time(NULL));
     int numDeFracciones = 0;
     int num, den;
     int index1, index2, index3;
@@ -100,7 +79,6 @@ int main()
 
         arrFracc[indiceFraccion] = new Fraccion(nuevoNum, nuevoDen);
     }
-
 
 
     index1 = rand() % numDeFracciones;

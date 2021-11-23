@@ -37,7 +37,7 @@ int Fraccion::getDen() {
 double Fraccion::calcValorReal() {
 	double valorReal = 0;
 
-	valorReal = (this->num) / (this->den);
+	valorReal = static_cast<double>(this->num) / (this->den);
 	return valorReal;
 }
 

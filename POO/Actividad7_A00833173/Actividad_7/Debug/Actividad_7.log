@@ -1,5 +1,5 @@
 ﻿  Actividad_7.cpp
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(30,26): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(43,14): warning C4101: 'den': variable local sin referencia
-C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(43,9): warning C4101: 'num': variable local sin referencia
+C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(51,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(53,14): warning C4101: 'den': variable local sin referencia
+C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Actividad_7\Actividad_7.cpp(53,9): warning C4101: 'num': variable local sin referencia
   Actividad_7.vcxproj -> C:\Users\Jaime Gay\Documents\GitHub\ProyectosEscolares\POO\Actividad7_A00833173\Debug\Actividad_7.exe

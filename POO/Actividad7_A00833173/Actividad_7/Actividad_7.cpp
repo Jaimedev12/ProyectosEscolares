@@ -20,20 +20,18 @@ int mcm(int a, int b) {
     return ((a * b) / MCD(a, b));
 }
 
-void sumaFracciones(Fraccion* fracc1, Fraccion* fracc2) {
+Fraccion* sumaFracciones(Fraccion* fracc1, Fraccion* fracc2) {
     int num1, den1;
-    cout << "Enter numerator and denominator of first number: ";
-    
-    //user input
-    cin >> num1 >> den1;
     int num2, den2;
-    cout << "Enter numerator and denominator of second number: ";
-    
-    //user input
-    cin >> num2 >> den2;
+
+    num1 = fracc1->getNum();
+    num2 = fracc2->getNum();
+
+    den1 = fracc1->getDen();
+    den2 = fracc2->getDen();
     
     //finding lcm of the denominators
-    int lcm = (den1 * den2) / MCD(den1, den2);
+    int lcm = mcm(den1, den2);
     
     //finding the sum of the numbers
     int sum = (num1 * lcm / den1) + (num2 * lcm / den2);
@@ -44,6 +42,10 @@ void sumaFracciones(Fraccion* fracc1, Fraccion* fracc2) {
     
     //printing output
     cout << num1 << "/" << den1 << " + " << num2 << "/" << den2 << " = " << num3 << "/" << lcm;
+
+    Fraccion* nuevaFraccion = new Fraccion(num3, lcm);
+
+    return nuevaFraccion;
 }
 
 

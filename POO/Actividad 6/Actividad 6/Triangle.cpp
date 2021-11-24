@@ -25,6 +25,7 @@ Triangle::Triangle(Point* point1, Point* point2, Point* point3) {
 	this->lado3 = sqrt((pow((vertex3->getCoordX() - vertex1->getCoordX()), 2)) + (pow((vertex3->getCoordY() - vertex1->getCoordY()), 2)));
 	this->semip = (lado1 + lado2 + lado3) / 2;
 
+
 }
 
 Triangle::~Triangle() {}

@@ -16,10 +16,7 @@ public:
 	int getNum();
 	int getDen();
 
-	double calcValorReal();
+	double calcValorReal(); 
 	void imprimeFraccion();
-
-
-
 };
 

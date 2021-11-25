@@ -16,6 +16,7 @@ int MCD(int a, int b) {
     else return MCD(a, b - a);
 }
 
+
 int mcm(int a, int b) {
     return ((a * b) / MCD(a, b));
 }

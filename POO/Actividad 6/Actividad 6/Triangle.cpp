@@ -26,6 +26,7 @@ Triangle::Triangle(Point* point1, Point* point2, Point* point3) {
 	this->semip = (lado1 + lado2 + lado3) / 2;
 }
 
+
 Triangle::~Triangle() {}
 
 double Triangle::perimeter() {

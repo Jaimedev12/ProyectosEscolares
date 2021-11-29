@@ -15,7 +15,6 @@ PROBLEMA 2.
 Realiza una función que solicite las coordenadas de dos puntos y que calcule la pendiente de la recta que une esos dos puntos.
 """
 
-
 # Problema 2 -----------------------
 
 def calcularPendiente():

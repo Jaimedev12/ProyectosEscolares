@@ -4,15 +4,17 @@
 Cliente::Cliente()
 {
 	this->nombre = "";
-	this->articulosEnCarrito = 0;
-	this->articulosMaximosEnCarrito = 10;
+	this->arregloArticulosEnCarrito = 0;
+	this->numeroMaximoArticulosEnElCarrito = 10;
+	this->arregloArticulosEnCarrito = new Articulo * [this->numeroMaximoArticulosEnElCarrito];
 }
 
 Cliente::Cliente(string nombre)
 {
 	this->nombre = nombre;
-	this->articulosEnCarrito = 0;
-	this->articulosMaximosEnCarrito = 10;
+	this->arregloArticulosEnCarrito = 0;
+	this->numeroMaximoArticulosEnElCarrito = 10;
+	this->arregloArticulosEnCarrito = new Articulo * [this->numeroMaximoArticulosEnElCarrito];
 }
 
 Cliente::~Cliente()
@@ -34,7 +36,7 @@ string Cliente::getNombre()
 
 Articulo** Cliente::getArticulosEnCarrito()
 {
-	return articulosEnCarrito;
+	return arregloArticulosEnCarrito;
 }
 
 double Cliente::getTotalAPagar()
@@ -42,26 +44,30 @@ double Cliente::getTotalAPagar()
 	double total = 0;
 	for (int i = 0; i < this->numeroDeArticulosEnCarrito; i++)
 	{
-		total += articulosEnCarrito[i]->getPrecio();
+		total += arregloArticulosEnCarrito[i]->getPrecio();
 	}
 	return total;
 }
 
 //---Funciones Especiales----------------------
-void Cliente::agregarArticuloAlCarrito(Articulo* articulo)
+void Cliente::agregarArticuloAlCarrito(Tienda* tienda, int indice)
 {
-	if (this->numeroDeArticulosEnCarrito == this->articulosMaximosEnCarrito)
+	//Este if lo que hace es ver si el arreglo ya se llenó
+	// si ya se llenó lo hace más grande y luego copia todo lo que había en el arreglo anterior a ese
+	if (this->numeroDeArticulosEnCarrito == this->numeroMaximoArticulosEnElCarrito)
 	{
-		this->numeroDeArticulosEnCarrito = this->articulosMaximosEnCarrito + 10;
-		Articulo** temp = new Articulo* [this->articulosMaximosEnCarrito];
+		this->numeroMaximoArticulosEnElCarrito += 10;
+		Articulo** arregloTemporal = new Articulo * [this->numeroMaximoArticulosEnElCarrito];
 		for (int i = 0; i < this->numeroDeArticulosEnCarrito; i++)
 		{
-			temp[i] = this->articulosEnCarrito[i];
+			arregloTemporal[i] = arregloArticulosEnCarrito[i];
 		}
-		delete[] this->articulosEnCarrito;
-		this->articulosEnCarrito = temp;
+		delete[] arregloArticulosEnCarrito;
+		this->arregloArticulosEnCarrito = arregloTemporal;
 	}
+	//Ésta línea agrega el artículo del índice que pusimos como parámetro al carrito del cliente y luego
+	// aumenta el número de artículos en el carrito por uno
+	this->arregloArticulosEnCarrito[this->numeroDeArticulosEnCarrito] = tienda->getArticulosALaVenta()[indice];
+	this->arregloArticulosEnCarrito++;
 
-	this->articulosEnCarrito[this->numeroDeArticulosEnCarrito] = articulo;
-	this->articulosEnCarrito++;
 }

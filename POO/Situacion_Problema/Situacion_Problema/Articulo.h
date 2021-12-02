@@ -19,6 +19,5 @@ public:
 	//---Getters-------------------------------------
 	double getPrecio();
 	string getNombre();
-
 };
 

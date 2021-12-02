@@ -1,5 +1,6 @@
 #pragma once
 #include "Articulo.h"
+#include "Tienda.h"
 #include <string>
 using namespace std;
 
@@ -8,8 +9,8 @@ class Cliente
 private:
 	string nombre;
 	int numeroDeArticulosEnCarrito;
-	int articulosMaximosEnCarrito;
-	Articulo** articulosEnCarrito;
+	int numeroMaximoArticulosEnElCarrito;
+	Articulo** arregloArticulosEnCarrito;
 
 public:
 	Cliente();
@@ -25,8 +26,7 @@ public:
 	double getTotalAPagar();
 
 	//---Funciones Especiales----------------------
-	void agregarArticuloAlCarrito(Articulo* articulo);
-
+	void agregarArticuloAlCarrito(Tienda* tienda, int indice);
 
 };
 

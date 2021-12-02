@@ -1,4 +1,5 @@
 #include "Articulo.h"
+#include "Cliente.h"
 
 
 //---Constructores y destructores ---------------
@@ -39,5 +40,6 @@ double Articulo::getPrecio()
 
 string Articulo::getNombre()
 {
-	return nombre;
+	return this->nombre;
 }
+

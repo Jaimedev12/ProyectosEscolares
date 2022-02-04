@@ -18,7 +18,7 @@ int main()
 	cliente->agregarArticuloAlCarrito(tienda1, 0);
 
 	cout << tienda1->getArticulosALaVenta()[0]->getNombre();
-	cout << cliente->getArticulosEnCarrito()[0]->getNombre();
+	//cout << cliente->getArticulosEnCarrito()[0]->getNombre();
 
 	//Articulo** articulosEnElCarrito = cliente->getArticulosEnCarrito();
 	//cout << articulosEnElCarrito[0]->getNombre();

@@ -102,10 +102,10 @@ Campus::printPrograms()
     for (auto program : programs){
         cout << program.name << " " << program.area << endl;
     }
-        
+
 }
 
-Campus::print(){
+void Campus::print(){
     cout << "\nNombre del campus: " << name << endl;
     cout << "Localidad del campus: " << location << endl;
     cout << "Capacidad: " << capacity << endl;

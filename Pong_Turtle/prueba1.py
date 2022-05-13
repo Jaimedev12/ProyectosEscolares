@@ -1,10 +1,12 @@
 from turtle import *
 import math
 
-shape('turtle)
+shape('turtle')
 color('purple', 'cyan')
 
 begin_fill() # Call before drawing
+
+speed(20)
 
 while True:
     forward(200)

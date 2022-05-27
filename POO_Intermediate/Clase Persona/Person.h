@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <iostream>
 
 using namespace std;
@@ -13,6 +16,7 @@ public:
 
   // Setters y getters
   void showData();
+  void sing();
 
 };
 
@@ -31,3 +35,9 @@ void Person::showData(){
     cout << "Nombre: " << name << endl;
     cout << "Edad: " << age << endl;
 }
+
+void Person::sing(){
+  cout << endl << name << " cantando..." << endl;
+}
+
+#endif

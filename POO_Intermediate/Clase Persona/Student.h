@@ -1,7 +1,5 @@
 #include "Person.h"
 
-#ifndef Person.h
-
 class Student : public Person{
 private:
     string program;
@@ -24,5 +22,3 @@ Student::Student(string _name, int _age, string _program) : Person(_name, _age){
 void Student::study(){
     cout << endl << name << " Estudiando..." << endl;
 }
-
-#endif Person.h

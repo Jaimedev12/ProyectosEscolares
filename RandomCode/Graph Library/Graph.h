@@ -13,11 +13,6 @@ using namespace std;
 
             TODO 
 
-1.  Hacer que BFT y DFT 
-funcionen en grafos cíclicos
-2.  Implementar hasPath function
-3.  Crear la opción para que
-una unión sea unidireccional 
 4.  Función para contar la cantidad 
 de componentes del grafo (partes 
 desconectadas)
@@ -45,7 +40,12 @@ public:
   void DFT(int N);
   void BFT(int N);
 
-  void dbgPrintGraph();
+  bool hasPath(int src, int dest);
+
+  // TODO
+  int countComponents();
+  int length();
+
 };
 
 Graph::Graph(){
@@ -129,53 +129,106 @@ void Graph::printGraph(){
 
 void Graph::DFT(int N){
 
-  visited.clear();
-  stack<int> stack;
-  stack.push(N);
+  if (adjList.find(N) != adjList.end()){
 
-  while(!stack.empty()){
-    
-    int current = stack.top();
+    visited.clear();
+    stack<int> stack;
+    stack.push(N);
+    int current;
 
-    //vector<string> temp = {"a", "b", "c", "d", "e", "f"};
-    //cout << temp[current] << endl;
-    cout << current;
-  
-    mapIt = adjList.find(current);
-    int nLinks = mapIt->second.size();
-  
-    stack.pop();
-    visited.insert(current);
-  
-    for (int i = 0; i < nLinks; i++){
-      stack.push(mapIt->second[i]);       
-    }
-  } 
+    while(!stack.empty()){
+      
+      current = stack.top();
+
+      if (visited.find(current) == visited.end()){
+
+        cout << current;
+      
+        mapIt = adjList.find(current);
+        int nLinks = mapIt->second.size();
+      
+        stack.pop();
+        visited.insert(current);
+
+        for (int i = 0; i < nLinks; i++){
+          stack.push(mapIt->second[i]);       
+        }
+      } else{
+        stack.pop();
+      }
+    } 
+  } else{
+    cout << "Node is not in the Graph, try other number" << endl;
+  }
+
 }
 
 void Graph::BFT(int N){
-  visited.clear();
-  queue<int> queue;
-  queue.push(N);
 
-  while(!queue.empty()){
-    
-    int current = queue.front();
+  if (adjList.find(N) != adjList.end()){
+    visited.clear();
+    queue<int> queue;
+    queue.push(N);
+    int current;
 
-    cout << current;
-  
-    mapIt = adjList.find(current);
-    int nLinks = mapIt->second.size();
-  
-    queue.pop();
-    visited.insert(current);
-  
-    for (int i = 0; i < nLinks; i++){
-
-      queue.push(mapIt->second[i]); 
+    while(!queue.empty()){
       
+      current = queue.front();
+
+      if (visited.find(current) == visited.end()){
+
+        cout << current;
+      
+        mapIt = adjList.find(current);
+        int nLinks = mapIt->second.size();
+      
+        queue.pop();
+        visited.insert(current);
+      
+        for (int i = 0; i < nLinks; i++){
+
+          queue.push(mapIt->second[i]); 
+          
+        }
+      } else{
+        queue.pop();
+      }
     }
-  }
+  } else{
+      cout << "Node is not in the Graph, try other number" << endl;
+    }
 }
 
+bool Graph::hasPath(int src, int dest){
+  visited.clear();
 
+  int current;
+  stack<int> stack;
+  
+  stack.push(src);
+
+  while(!stack.empty()){
+    
+    current = stack.top();
+
+    if (visited.find(current) == visited.end()){
+
+      if (current == dest){
+        return true;
+      }
+    
+      mapIt = adjList.find(current);
+      int nLinks = mapIt->second.size();
+    
+      stack.pop();
+      visited.insert(current);
+
+      for (int i = 0; i < nLinks; i++){
+        stack.push(mapIt->second[i]);       
+      }
+    } else{
+      stack.pop();
+    }
+  } 
+  return false;
+}

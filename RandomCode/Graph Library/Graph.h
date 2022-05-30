@@ -37,7 +37,9 @@ public:
   Graph();
   Graph(int V);
   void addNode(int value, vector<int> connections);
-  void addEdge(int src, int dest);
+  void addSingleEdge(int src, int dest);
+  void addDoubleEdge(int src, int dest);
+
   void printGraph();
 
   void DFT(int N);
@@ -75,15 +77,28 @@ void Graph::addNode(int value, vector<int> connections){
   adjList.insert(pair<int, vector<int>> (value, connections));
 }
 
-void Graph::addEdge(int src, int dest){
-
+void Graph::addSingleEdge(int src, int dest){
   if ( (adjList.find(src) != adjList.end()) && (adjList.find(dest) != adjList.end()) ){
+    
+    mapIt = adjList.find(src);
+    auto connections = mapIt->second;
+    
+    if ( find(connections.begin(), connections.end(), dest) == connections.end() )
+      mapIt->second.push_back(dest); 
+    
+  } else {
+    cout << "One of the 2 nodes is not in the Graph, please add it first" << endl;
+  }
+}
+
+void Graph::addDoubleEdge(int src, int dest){
+   if ( (adjList.find(src) != adjList.end()) && (adjList.find(dest) != adjList.end()) ){
     
     mapIt = adjList.find(src);
     auto connections = mapIt->second;
     if ( find(connections.begin(), connections.end(), dest) == connections.end() )
       mapIt->second.push_back(dest); 
-    
+     
     mapIt = adjList.find(dest);
     connections = mapIt->second;
     if ( find(connections.begin(), connections.end(), src) == connections.end() )
@@ -92,7 +107,6 @@ void Graph::addEdge(int src, int dest){
   } else {
     cout << "One of the 2 nodes is not in the Graph, please add it first" << endl;
   }
-
 }
 
 void Graph::printGraph(){

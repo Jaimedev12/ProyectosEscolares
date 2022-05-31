@@ -8,7 +8,7 @@ int main() {
   grafo.addNode(0, {1, 3});
   grafo.addNode(1, {2, 4});
   grafo.addNode(2, {});
-  grafo.addNode(3, {1, 5});
+  grafo.addNode(3, {1});
   grafo.addNode(4, {3});
   grafo.addNode(5, {});
 
@@ -18,10 +18,11 @@ int main() {
   
   grafo.printGraph();
 
-  grafo.BFT(6);
+  
+  grafo.BFT(0);
   cout << endl;
-  grafo.DFT(6);
+  grafo.DFT(0);
 
   cout << endl;
-    
+  
 }

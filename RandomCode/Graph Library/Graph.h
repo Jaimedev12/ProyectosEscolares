@@ -12,7 +12,6 @@ using namespace std;
 /*
 
             TODO 
-
 4.  Función para contar la cantidad 
 de componentes del grafo (partes 
 desconectadas)
@@ -44,6 +43,7 @@ public:
 
   // TODO
   int countComponents();
+  int lenghtOfLongestComponent();
   int length();
 
 };

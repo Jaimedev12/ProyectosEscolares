@@ -1,0 +1,4 @@
+Chapter_One:_The_Vanishing_of_Will_Byers	Ciencia_Ficción	12	3.5	Stranger_Things	Temporada_1
+Chapter_Two:_Trick_or_Treat,_Freak	Ciencia_Ficción	23	1.2	Stranger_Things	Temporada_2
+Meet	Romcom/LGBTQ	34	2.2	Heartstopper	Temporada_1
+Crush	Romcom/LGBTQ	45	4.7	Heartstopper	Temporada_1

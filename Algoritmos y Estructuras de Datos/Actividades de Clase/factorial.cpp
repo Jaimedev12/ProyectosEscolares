@@ -2,14 +2,25 @@
 
 using namespace std;
 
-int factorial(int n){
+int factorialIterativo(int n){
+  int result = 1;
+  while(n > 0){
+    result *= n;
+    n = n - 1;
+  }
+  return result;
+}
+
+int factorialRecursivo(int n){
   if (n == 0){
     return 1;
   }  else{
-    return factorial(n-1)*n; 
+    return factorialRecursivo(n-1)*n; 
   }
 }
 
 int main() {
- cout << factorial(8) << endl;
+  cout << "Método recursivo: " << factorialRecursivo(8) << endl;
+  cout << "Método iterativo: " << factorialIterativo(8) << endl;
+
 }
